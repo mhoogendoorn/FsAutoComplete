@@ -82,7 +82,7 @@ Target.create "LocalRelease" (fun _ ->
 
 
     Shell.cleanDirs [ "bin/release_as_tool" ]
-    DotNet.publish (fun p ->
+    DotNet.pack (fun p ->
        { p with
            OutputPath = Some (__SOURCE_DIRECTORY__ </> "bin/release_as_tool")
            Configuration = DotNet.BuildConfiguration.fromString configuration
